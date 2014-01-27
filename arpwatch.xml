@@ -68,7 +68,7 @@
 		</tab>
 		<tab>
 			<text>Reports</text>
-			<url>/arpwatch_reports.php</url>
+			<url>/arpwatch_reports.php?interface=default</url>
 		</tab>
 	</tabs>
 	<configpath>installedpackages->package->$packagename->configuration->settings</configpath>

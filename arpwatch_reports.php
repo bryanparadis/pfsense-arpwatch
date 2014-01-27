@@ -31,8 +31,17 @@
 
 require_once("guiconfig.inc");
 require_once("service-utils.inc");
- 
-$logfile = "/var/log/arp." . $_GET['interface'] . ".dat";
+
+//if for some reason it is not passed an interface...
+if(!isset($_GET['interface']) || $_GET['interface']=="default") {  
+	$interface = convert_friendly_interface_to_real_interface_name($config['installedpackages']['arpwatch']['config'][0]['interface_array'][0]);
+	
+} 
+else { 
+	$interface = $_GET['interface'];
+}
+
+$logfile = "/var/log/arp." . $interface . ".dat";
 
 if ($_POST['clear']) {
         stop_service("arpwatch");
@@ -81,7 +90,7 @@ include("head.inc");
 			if($if && $if!="lo0") {
 				$tab_array[] = array(gettext($iface),
 				(($interface == $if)),
-				"/arpwatch_reports.php?interface=$if");
+				"/arpwatch_reports.php?interface={$if}");
 			}
 		}
 	display_top_tabs($tab_array);
@@ -92,7 +101,7 @@ include("head.inc");
                         <div id="mainarea">
                         <table class="tabcont" width="100%" border="0" cellspacing="0" cellpadding="0">
                                 <tr>
-                                        <td colspan="4" class="listtopic">arp.dat entries</td>
+                                        <td colspan="4" class="listtopic"><?php echo $_GET['interface']; ?> entries</td>
                                 </tr>
 				<tr>
 					<td width="15%" class="listhdrr">IP</td>
