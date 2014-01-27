@@ -35,7 +35,6 @@ require_once("service-utils.inc");
 //if for some reason it is not passed an interface...
 if(!isset($_GET['interface']) || $_GET['interface']=="default") {  
 	$interface = convert_friendly_interface_to_real_interface_name($config['installedpackages']['arpwatch']['config'][0]['interface_array'][0]);
-	
 } 
 else { 
 	$interface = $_GET['interface'];
@@ -72,7 +71,6 @@ include("head.inc");
 
 <body link="#0000CC" vlink="#0000CC" alink="#0000CC">
 <?php include("fbegin.inc"); ?>
-<p class="pgtitle"><?=$pgtitle?></p>
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
 	<tr><td class="tabnavtbl">
 <?php
@@ -87,7 +85,7 @@ include("head.inc");
 	$tab_array = array();
 	foreach($config['installedpackages']['arpwatch']['config'][0]['interface_array'] as $iface) {
 			$if = convert_friendly_interface_to_real_interface_name($iface);
-			if($if && $if!="lo0") {
+			if($if) {
 				$tab_array[] = array(gettext($iface),
 				(($interface == $if)),
 				"/arpwatch_reports.php?interface={$if}");

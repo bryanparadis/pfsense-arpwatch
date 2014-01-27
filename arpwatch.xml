@@ -125,7 +125,7 @@
 		
 		foreach($_POST['interface_array'] as $iface) {
 			$int = convert_friendly_interface_to_real_interface_name($iface);
-			if($int && $int!="lo0") {
+			if($int) {
 				$log_file = "/var/log/arp.{$int}.dat";
 				$start .= "touch {$log_file}\n";
 				$start .="/usr/local/sbin/arpwatch {$debug} -f {$log_file} {$mail} -i {$int} > /var/log/arpwatch.reports.{$int} 2>&amp;1 &amp;\n";	
