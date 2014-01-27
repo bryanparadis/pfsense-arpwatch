@@ -64,7 +64,7 @@ if(file_exists($logfile)) {
 		unset($mac);
 	}
 }
-$pgtitle = "arpwatch: Reports";
+$pgtitle = "Arpwatch: Reports";
 include("head.inc");
 
 ?>
