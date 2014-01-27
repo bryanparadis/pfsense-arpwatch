@@ -89,6 +89,7 @@
 			<value>lan</value>
 			<multiple>true</multiple>
 			<size>10</size>
+			<hideinterfaceregex>(loopback)</hideinterfaceregex>
 			<type>interfaces_selection</type>
 		</field>
 		<field>
