@@ -137,7 +137,7 @@ include("head.inc");
                                 <tr>
                                         <td>
                                                 <br>
-                                                <form action="arpwatch_reports.php" method="post">
+                                                <form action="arpwatch_reports.php?interface=<?php echo $interface;?>" method="post">
                                                 <input name="clear" type="submit" class="formbtn" value="Clear log">
                                                 </form>
                                         </td>
