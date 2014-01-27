@@ -101,7 +101,7 @@ include("head.inc");
                         <div id="mainarea">
                         <table class="tabcont" width="100%" border="0" cellspacing="0" cellpadding="0">
                                 <tr>
-                                        <td colspan="4" class="listtopic"><?php echo $_GET['interface']; ?> entries</td>
+                                        <td colspan="4" class="listtopic"><?php echo convert_real_interface_to_friendly_interface_name($interface); ?> entries</td>
                                 </tr>
 				<tr>
 					<td width="15%" class="listhdrr">IP</td>
