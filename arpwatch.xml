@@ -128,7 +128,7 @@
 			if($int) {
 				$log_file = "/var/log/arp.{$int}.dat";
 				$start .= "touch {$log_file}\n";
-				$start .="/usr/local/sbin/arpwatch {$debug} -f {$log_file} {$mail} -i {$int} > /var/log/arpwatch.reports.{$int} 2>&amp;1 &amp;\n";	
+				$start .="/usr/local/sbin/arpwatch {$debug} -f {$log_file} \"{$mail}\" -i {$int} > /var/log/arpwatch.reports.{$int} 2>&amp;1 &amp;\n";	
 			}
 		}
 		
